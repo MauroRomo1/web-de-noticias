@@ -1,11 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Titulo from "./components/Titulo";
 
 function App() {
   return (
     <>
       <header>
-        <h1 className="text-center my-3">Noticias</h1>
+        <Titulo />
       </header>
       <main>
         <h2>contendio main</h2>
