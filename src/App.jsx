@@ -4,7 +4,17 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>web de noticias</h1>
+      <header>
+        <h1 className="text-center my-3">Noticias</h1>
+      </header>
+      <main>
+        <h2>contendio main</h2>
+      </main>
+      <footer>
+        <h6 className="text-center my-3">
+          &copy; Todos los derechos reservados
+        </h6>
+      </footer>
     </>
   );
 }
