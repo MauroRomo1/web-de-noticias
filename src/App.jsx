@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Titulo from "./components/Titulo";
+import Formulario from "./components/Formulario";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <Titulo />
       </header>
       <main>
-        <h2>contendio main</h2>
+        <Formulario />
       </main>
       <footer>
         <h6 className="text-center my-3">
