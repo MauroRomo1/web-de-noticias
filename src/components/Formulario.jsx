@@ -1,12 +1,30 @@
 import { Col, Form, Row } from "react-bootstrap";
 import ListaNoticias from "./ListaNoticias";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Formulario = () => {
   const [selectValor, setselectValor] = useState("top");
 
   const handleChange = (e) => {
     setselectValor(e.target.value);
+  };
+
+  useEffect(() => {
+    ConsultarNewsData(selectValor);
+  }, [selectValor]);
+
+  const ConsultarNewsData = async (categoria) => {
+    const keyAPI = "pub_26960b50cf8d5f3f62e9d05233362ccc84b18";
+    try {
+      const repuesta = await fetch(
+        `https://newsdata.io/api/1/news?apikey=${keyAPI}&language=es&category=${categoria}`
+      );
+      const { results } = await repuesta.json();
+
+      console.log(results);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
