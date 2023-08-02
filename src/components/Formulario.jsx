@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 const Formulario = () => {
   const [selectValor, setselectValor] = useState("top");
 
+  const [noticias, setnoticias] = useState([]);
+
   const handleChange = (e) => {
     setselectValor(e.target.value);
   };
@@ -21,9 +23,9 @@ const Formulario = () => {
       );
       const { results } = await repuesta.json();
 
-      console.log(results);
+      setnoticias(results);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -53,7 +55,7 @@ const Formulario = () => {
           </Col>
         </Row>
       </section>
-      <ListaNoticias />
+      <ListaNoticias noticias={noticias} />
     </>
   );
 };
