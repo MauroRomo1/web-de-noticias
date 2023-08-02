@@ -4,7 +4,7 @@ const Formulario = () => {
   return (
     <section className="container my-4">
       <Row className="justify-content-center">
-        <Col className="border border-3" md="8">
+        <Col className="border border-3" xs="11" md="8">
           <Form>
             <Form.Group className="my-4" controlId="formCategoria">
               <Form.Label>Buscar por categoria:</Form.Label>
