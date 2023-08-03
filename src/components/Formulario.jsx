@@ -40,7 +40,7 @@ const Formulario = () => {
     <>
       <section className="container my-4">
         <Row className="justify-content-center">
-          <Col className="border border-3" xs="11" lg="8">
+          <Col className="border border-3 bg-white shadowCard" xs="11" lg="8">
             <Form>
               <Form.Group className="my-4" controlId="formCategoria">
                 <Form.Label>Buscar por categoria:</Form.Label>

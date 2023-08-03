@@ -1,7 +1,7 @@
 const CardNoticia = ({ noticia }) => {
   return (
     <div className="col">
-      <div className="card shadow h-100">
+      <div className="card shadowCard h-100">
         <img
           src={
             noticia.image_url

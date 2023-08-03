@@ -6,7 +6,7 @@ import Formulario from "./components/Formulario";
 function App() {
   return (
     <>
-      <header>
+      <header className="bg-white">
         <Titulo />
       </header>
       <main>
