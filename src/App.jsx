@@ -1,9 +1,22 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Titulo from "./components/Titulo";
+import Formulario from "./components/Formulario";
 
 function App() {
   return (
     <>
-      <h1>web de noticias</h1>
+      <header className="bg-white">
+        <Titulo />
+      </header>
+      <main>
+        <Formulario />
+      </main>
+      <footer>
+        <h6 className="text-center my-3">
+          &copy; Todos los derechos reservados
+        </h6>
+      </footer>
     </>
   );
 }
