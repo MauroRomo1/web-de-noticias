@@ -38,7 +38,7 @@ const Formulario = () => {
 
   return (
     <>
-      <section className="container my-4">
+      <section className="container my-5">
         <Row className="justify-content-center">
           <Col className="border border-3 bg-white shadowCard" xs="11" lg="8">
             <Form>
