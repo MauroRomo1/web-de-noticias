@@ -1,11 +1,14 @@
 import { Col, Form, Row } from "react-bootstrap";
 import ListaNoticias from "./ListaNoticias";
 import { useEffect, useState } from "react";
+import SpinnerComponent from "./SpinnerComponent";
 
 const Formulario = () => {
   const [selectValor, setselectValor] = useState("top");
 
   const [noticias, setnoticias] = useState([]);
+
+  const [mostrarSpinner, setmostrarSpinner] = useState(true);
 
   const handleChange = (e) => {
     setselectValor(e.target.value);
@@ -16,6 +19,8 @@ const Formulario = () => {
   }, [selectValor]);
 
   const ConsultarNewsData = async (categoria) => {
+    setmostrarSpinner(true);
+
     const keyAPI = "pub_26960b50cf8d5f3f62e9d05233362ccc84b18";
     try {
       const repuesta = await fetch(
@@ -23,8 +28,10 @@ const Formulario = () => {
       );
       const { results } = await repuesta.json();
 
+      setmostrarSpinner(false);
       setnoticias(results);
     } catch (error) {
+      setmostrarSpinner(false);
       console.error(error);
     }
   };
@@ -55,7 +62,12 @@ const Formulario = () => {
           </Col>
         </Row>
       </section>
-      <ListaNoticias noticias={noticias} />
+
+      {mostrarSpinner ? (
+        <SpinnerComponent />
+      ) : (
+        <ListaNoticias noticias={noticias} />
+      )}
     </>
   );
 };
