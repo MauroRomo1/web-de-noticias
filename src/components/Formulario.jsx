@@ -36,7 +36,6 @@ const Formulario = () => {
 
       setmostrarSpinner(false);
       setnoticias(results);
-      console.log(results);
     } catch (error) {
       setmostrarSpinner(false);
       console.error(error);
