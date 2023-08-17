@@ -1,15 +1,19 @@
 const CardNoticia = ({ noticia }) => {
+  const imgDefault =
+    "https://www.educaciontrespuntocero.com/wp-content/uploads/2019/03/noticias-destacadas-web.jpg";
+
+  const handleImageError = (e) => {
+    e.target.src = imgDefault;
+  };
+
   return (
     <div className="col">
       <div className="card shadowCard h-100">
         <img
-          src={
-            noticia.image_url
-              ? noticia.image_url
-              : "https://www.educaciontrespuntocero.com/wp-content/uploads/2019/03/noticias-destacadas-web.jpg"
-          }
+          src={noticia.image_url || imgDefault}
           className="card-img-top img-noticias"
-          alt="..."
+          alt={noticia.title}
+          onError={handleImageError}
         />
         <div className="card-body">
           <h5 className="card-title">{noticia.title}</h5>
