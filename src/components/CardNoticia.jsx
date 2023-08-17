@@ -1,6 +1,6 @@
 const CardNoticia = ({ noticia }) => {
   const imgDefault =
-    "https://www.educaciontrespuntocero.com/wp-content/uploads/2019/03/noticias-destacadas-web.jpg";
+    "https://img.freepik.com/premium-vector/newspaper-laptop-screen-online-news-reading-news-computer-screen-daily-weekly-breaking-news-news-web-page-information-about-events-activities-worldwide-media-your-device_435184-1193.jpg";
 
   const handleImageError = (e) => {
     e.target.src = imgDefault;
